@@ -1,0 +1,26 @@
+CREATE TABLE cookware (id INTEGER PRIMARY KEY, name TEXT, quantity INTEGER, price INTEGER, aisle INTEGER, order_from TEXT);
+INSERT INTO cookware VALUES (1, "Whisk", 20, 5, 1, "Amazon");
+INSERT INTO cookware VALUES (2, "Spatula", 18, 3, 1, "Restaraunt Depo");
+INSERT INTO cookware VALUES (3, "Frying Pan", 5, 40, 2, "Amazon");
+INSERT INTO cookware VALUES (4, "Wok", 5, 20, 2, "Amazon");
+INSERT INTO cookware VALUES (5, "Rice cooker", 4, 30, 2, "Amazon");
+INSERT INTO cookware VALUES (6, "Espresso Machine", 2, 100, 3, "Breville");
+INSERT INTO cookware VALUES (7, "Air Fryer", 7, 110, 3, "Amazon");
+INSERT INTO cookware VALUES (8, "Stand Mixer", 3, 200, 3, "Kitchenaid");
+INSERT INTO cookware VALUES (9, "Blender", 5, 30, 4, "Restaraunt Depo");
+INSERT INTO cookware VALUES (10, "Knifes Set", 7, 100, 4, "Restaraunt Depo");
+INSERT INTO cookware VALUES (11, "Wine Stopper", 2, 5, 5, "Amazon");
+INSERT INTO cookware VALUES (12, "Crockpot", 2, 40, 3, "Amazon");
+INSERT INTO cookware VALUES (13, "Baking sheet", 10, 9, 6, "Restaraunt Depo");
+INSERT INTO cookware VALUES (14, "Cake Stand", 6, 12, 6, "Pottery Studio");
+INSERT INTO cookware VALUES (15, "Off-set Spatula", 4, 4, 6, "IKEA");
+INSERT INTO cookware VALUES (16, "Piping Bag", 20, 2, 6, "Amazon");
+
+SELECT * FROM cookware;
+SELECT * FROM cookware ORDER BY price;
+SELECT * FROM cookware WHERE aisle > 3 ORDER BY aisle;
+
+SELECT SUM(quantity) FROM cookware;
+SELECT aisle, SUM(quantity) FROM cookware GROUP BY aisle;
+
+SELECT * FROM cookware WHERE price < 50 ORDER BY price;
