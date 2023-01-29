@@ -1,0 +1,18 @@
+/* What does the app's SQL look like? */
+CREATE TABLE period_tracker (id INTEGER PRIMARY KEY AUTOINCREMENT, user_name TEXT, date TEXT, period_flow TEXT, pain_scale INTEGER, content TEXT);
+
+INSERT INTO period_tracker (user_name, date, period_flow, pain_scale, content) VALUES ("sarahs39", "10-12-2022", "heavy", 8, "Symptoms included stomach issues and back pain. Took tylenol. High pain but chocolate helped.");
+
+INSERT INTO period_tracker (user_name, date, period_flow, pain_scale, content) VALUES ("sarahs39", "10-13-2022", "heavy", 6, "Took tylenol. Was more active, got some errands done and did some yoga to help the pain");
+
+INSERT INTO period_tracker (user_name, date, period_flow, pain_scale, content) VALUES ("sarahs39", "10-14-2022", "medium", 3, "Did yoga");
+
+SELECT * FROM period_tracker;
+
+UPDATE period_tracker SET content = "Did yoga. Had headache all day." WHERE id = 3;
+
+SELECT * FROM period_tracker;
+
+DELETE FROM period_tracker WHERE id = 3;
+
+SELECT * FROM period_tracker;
