@@ -1,0 +1,46 @@
+/* Create table about the people and what they do here */
+CREATE TABLE television_stars (id INTEGER PRIMARY KEY AUTOINCREMENT, 
+    name TEXT, movie_title TEXT, astrological_sign TEXT);
+
+CREATE TABLE television_couples (id INTEGER PRIMARY KEY AUTOINCREMENT, 
+    person1_id INTEGER, person2_id INTEGER);
+
+INSERT INTO television_stars VALUES (1, "Blake Lively", "Gossip Girl", "Virgo");
+
+INSERT INTO television_stars (name, movie_title, astrological_sign) VALUES ("Ryan Reynolds", "Green Lantern", "Scorpio");
+
+INSERT INTO television_stars (name, movie_title, astrological_sign) VALUES ("Blake Lively", "Green Lantern", "Virgo");
+
+INSERT INTO television_stars (name, movie_title, astrological_sign) VALUES ("Dax Shepard", "Hit and Run", "Capricorn");
+
+INSERT INTO television_stars (name, movie_title, astrological_sign) VALUES ("Kristen Bell", "The Good Place", "Cancer");
+
+INSERT INTO television_stars (name, movie_title, astrological_sign) VALUES ("Nick Offerman", "Parks and Recreation", "Cancer");
+
+INSERT INTO television_stars (name, movie_title, astrological_sign) VALUES ("Megan Mullally", "Will and Grace", "Leo");
+
+INSERT INTO television_couples (person1_id, person2_id) VALUES (1, 2);
+
+INSERT INTO television_couples (person1_id, person2_id) VALUES (6, 7);
+
+INSERT INTO television_couples (person1_id, person2_id) VALUES (4, 5);
+
+INSERT INTO television_couples (person1_id, person2_id) VALUES (3, 2);
+
+SELECT * FROM television_stars;
+
+SELECT * FROM television_couples;
+
+SELECT name, movie_title FROM television_stars WHERE name = "Blake Lively";
+
+SELECT a.name, b.name FROM television_couples
+    JOIN television_stars a
+    ON a.id = television_couples.person1_id
+    JOIN television_stars b 
+    ON b.id = television_couples.person2_id;
+    
+SELECT a.name AS name_1, b.name AS name_2, a.astrological_sign AS astrology_sign_1, b.astrological_sign AS astrology_sign_2 FROM television_couples
+    JOIN television_stars a
+    ON a.id = television_couples.person1_id
+    JOIN television_stars b 
+    ON b.id = television_couples.person2_id; 
